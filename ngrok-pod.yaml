@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngrok
+spec:
+  containers:
+  - image: wernight/ngrok
+    name: ngrok
+    command: ["ngrok"]
+    args: ["http", "nginx-service"]
+    ports:
+    - containerPort: 4040
